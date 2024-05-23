@@ -48,7 +48,7 @@ function aggregateData(data) {
 
 function populateTable(data) {
     const tableBody = document.getElementById('tableBody');
-    tableBody.innerHTML = ''; // Clear existing table data
+    tableBody.innerHTML = ''; 
 
     data.forEach(item => {
         const row = document.createElement('tr');
@@ -106,7 +106,7 @@ function drawLineGraph(data) {
 function showDetails(year) {
     const detailsTable = document.getElementById('detailsTable');
     const detailsTableBody = document.getElementById('detailsTableBody');
-    detailsTableBody.innerHTML = ''; // Clear existing table data
+    detailsTableBody.innerHTML = ''; 
 
     const jobsForYear = originalData.filter(item => item.work_year === year);
     const jobCounts = jobsForYear.reduce((acc, job) => {
