@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Engineer Salaries</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            position: relative;
+        }
+        th button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            position: absolute;
+            right: 10px;
+        }
+        th button.asc::after {
+            content: '▲';
+        }
+        th button.desc::after {
+            content: '▼';
+        }
+        canvas {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="fileInput" accept=".csv" />
+    <table id="mainTable">
+        <thead>
+            <tr>
+                <th>Year <button onclick="sortTable(0, this)" class="asc"></button></th>
+                <th>Total Jobs <button onclick="sortTable(1, this)" class="asc"></button></th>
+                <th>Average Salary (USD) <button onclick="sortTable(2, this)" class="asc"></button></th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Data will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+    <canvas id="lineGraph" width="600" height="400"></canvas>
+    <table id="detailsTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Number of Jobs</th>
+            </tr>
+        </thead>
+        <tbody id="detailsTableBody">
+            <!-- Data will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
