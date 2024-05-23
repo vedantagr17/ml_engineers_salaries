@@ -79,4 +79,4 @@ def chat():
         print(f"Bot: {response}")
 
 if __name__ == "__main__":
-    chat()       # Start the chat function
+    chat()       # Starting the chat function
